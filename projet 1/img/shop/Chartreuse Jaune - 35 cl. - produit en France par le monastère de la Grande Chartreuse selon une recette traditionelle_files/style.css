@@ -1,0 +1,941 @@
+/* FEUILLE DE "" COPYRIGHT STORE-FACTORY "Aout 2015" */
+
+html,body,form,ul,li,p,h1,h2,h3,h4,h5,h6,td {
+    color:#000;
+    font-size:12px;
+    font-family:Arial;
+    text-decoration:none;
+	}
+a {
+	color:#000;
+	text-decoration:none;
+	}
+body {
+	margin:0;
+	line-height:1;
+	}
+ol,ul {
+	margin:0;
+	padding:0;
+	list-style:none;
+	}
+blockquote,q {
+	quotes:none;
+	}
+:focus {
+	outline:0;
+	}
+table {
+	border-spacing:0;
+	border-collapse:collapse;
+	}
+img {
+	border:none;
+	max-width:100%;
+	}
+form {
+	margin:0;
+	padding:0;
+	}
+/*------------------------------ GENERALITES -------------------------------*/
+/*-------------- Static ----------------*/
+.bold {
+	font-weight:bold;
+	}
+.error {
+	color:red;
+	font-weight:bold;
+	}
+.star {
+	color:red;
+	}
+.comment {
+	font-style:italic;
+	}
+.label {
+	width:34%;
+	margin:0;
+	padding:3px 5px 0 0;
+	float:left;
+	text-align:right;
+	}
+.label .comment {
+	font-size:7pt;
+	}
+#page .view,#product .view {
+	margin:0 20px 20px 0;
+	}
+.view {
+	float:left;
+	}
+.view_large {
+	margin:0 auto;
+	text-align:center;
+	}
+.logo {
+	float:left;
+	}
+.inter {
+	display:none;
+	}
+.inter_top,.inter_bottom {
+	display:none;
+	}
+.list_btn {
+	display:block;
+	text-align:right;
+	}
+.list_bottom {
+	clear:both;
+	}
+.work_margin {
+	margin:10px 10px 10px 10px;
+	}
+/*------------ A customiser  -----------*/
+body {
+	background:#fff url(img/body_bkg.png) top left repeat-x;
+	}
+.bkg_texture {
+	background:none;
+	}
+#master {
+	width:1180px;
+	margin:0 auto;
+	position:relative;
+	text-align:left;
+	background:#f4f4f4 url(img/master_bkg.png) no-repeat;
+	}
+#work {
+	width:1180px;
+	}
+#work_order {
+	width:1180px;
+	}
+#account_contener {
+	width:600px;
+	margin:0 auto;
+	text-align:left;
+	}
+h1,h1 a {
+	margin:0 0 15px 0;
+	color:#555;
+	font-size:18px;
+	font-weight:bold;
+	text-decoration:none;
+	}
+h2,h3 {
+	margin:0 0 15px 0;
+	color:#000;
+	font-size:15px;
+	font-weight:bold;
+	}
+.price,.price_value,.price a,.price .currency,.price .IT,.price .OT,.price .cents {
+	color:#555;
+	font-weight:normal;
+	}
+.pstrike {
+	color:#000;
+	text-decoration:line-through;
+	}
+.pstrike a,.pstrike .currency {
+	color:#0005;
+	font-size:11px;
+	}
+.pweight,.pweight .currency {
+	color:#555;
+	font-size:11px;
+	font-style:italic;
+	}
+.en_stock {	
+	padding:0 0 0 12px;
+	color:#000;
+	font-style:italic;
+	background:url(img/stock.png) 0 -10px no-repeat;
+	}
+.out_stock {	
+	padding:0 0 0 12px;
+	color:#000;
+	font-style:italic;
+	background:url(img/stock.png) 0 3px no-repeat;
+	}
+.primary,.primary a {
+	display:block;
+	color:#555;
+	font-size:12px;
+	}
+.secondary,.secondary a {
+	display:block;
+	color:#000;
+	}
+/*------------ Les boutons -------------*/
+.btn_pos {
+	display:block;
+	clear:both;
+	margin:10px 0;
+	text-align:center;
+	}
+.btn,.btn_short,.btn_midle,.btn_long,.btn_detail,.btn_buy {
+	padding:4px 0;
+	color:#fff;
+	font-size:12px;
+	border:none;
+	cursor:pointer;
+	text-transform:lowercase;
+	background:#555;
+	border-radius:5px;
+	}
+.btn:hover,.btn_short:hover,.btn_midle:hover,.btn_long:hover,.btn_detail:hover,.btn_buy:hover {
+	color:#555;
+	background:#c1c1c1;
+	}
+.ibox,.ibox_short,.ibox_midle,.ibox_long,.ibox_vlong {
+	padding:2px 5px;
+	color:#555;
+	background:#fff;
+	border:1px solid #dedede;
+	}
+select.ibox,select.ibox_long,select.ibox_vlong {
+	padding:2px 0;
+	}
+.btn {width:120px;}
+.btn_short {width:32px;}
+.btn_midle,.btn_detail,.btn_buy {width:70px;}
+.btn_long,.btn_o2_002,.btn_o4_002 {width:150px;cursor:pointer;}
+.btn_li_004 {width:80px;cursor:pointer;}
+.btn_z0_01 {width:120px;cursor:pointer;}
+.btn_z1_001 {width:160px;cursor:pointer;}
+.z800 {display:none;cursor:pointer;}
+.a601 {padding-top:5px;cursor:pointer;}
+
+.ibox {width:100px;}
+.ibox_short {width:28px;}
+.ibox_midle {width:150px;}
+.ibox_long {width:200px;}
+.ibox_vlong {width:500px;}
+
+/*------------------------------ PARTIE TOP ---------------------------------*/
+#top,#top_order {
+	height:150px;
+	background:#777 url(img/top_bkg.png) no-repeat;
+	}
+/* ----------- Les drapeaux ----------- */
+#flag {
+	position:absolute;
+	width:300px;
+	top:10px;
+	left:20px;
+	}
+#flag li {
+	float:left;
+	padding:0 5px;
+	}
+#flag a {
+	width:20px;
+	height:15px;
+	display:block;
+	}
+#flag .fr a {background:url(./mag/logo/flag_fr.gif);}
+#flag .en a {background:url(./mag/logo/flag_en.gif);}
+#flag .de a {background:url(./mag/logo/flag_de.gif);}
+#flag .sp a {background:url(./mag/logo/flag_sp.gif);}
+#flag .it a {background:url(./mag/logo/flag_it.gif);}
+#flag .pt a {background:url(./mag/logo/flag_pt.gif);}
+#flag .ru a {background:url(./mag/logo/flag_ru.gif);}
+#flag .ma a {background:url(./mag/logo/flag_ma.gif);}
+#flag .nl a {background:url(./mag/logo/flag_nl.gif);}
+#flag .jp a {background:url(./mag/logo/flag_jp.gif);}
+#flag .cn a {background:url(./mag/logo/flag_cn.gif);}
+#flag span {
+	display:none;
+	}
+/* ------------- Le logo -------------- */
+#logo a:hover {
+	text-decoration:none;
+	}
+#logo {
+	}
+#logo a {
+	display:block;
+	}
+#logo span,#logo p {
+	display:none;
+	}
+/* ---------- Encart comand ----------- */
+#comand {
+	width:500px;
+	height:25px;
+	margin:10px 10px 0 0;
+	padding:0;
+	float:right;
+	background:#c1c1c1 url(img/comand_bkg.png) no-repeat;
+	}
+#comand li {
+	padding:0 10px;
+	float:right;
+	}
+#comand a {
+	color:#000;
+	}
+#comand span {
+	color:#000;
+	font-size:12px;
+	font-weight:bold;
+	text-transform:capitalize;
+	}
+#comand a:hover span {
+	color:#fff;
+	}
+/* Hack pour chrome car bug quand "Capitalize" */	
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+	#comand span {
+		text-transform:none;
+		}
+	}
+/* ------- fin du hack ------- */
+#comand .basket {
+	background: url(img/basket.png) no-repeat;
+	}
+#comand .account  {
+	background: url(img/account.png) no-repeat;
+	}
+#comand div span {
+	color:#000;
+	font-size:11px;
+	font-weight:normal;
+	}
+#comand div,#comand div div {
+	display:inline;
+	}
+#comand .order,#comand .help,#charit_basket {
+	display:none;
+	}
+/*---------------------------- MENU/NAVIG -----------------------------------*/
+#navig li {
+	display:inline-block;
+	vertical-align: middle;
+	}
+#navig span {
+	color:#fff;
+	font-size:12px;
+	font-weight:bold;
+	text-transform:uppercase;
+	}
+#navig a {
+	cursor:pointer;
+	}
+#navig .smenu li {
+	width:100%;
+	}
+#navig .smenu {
+	visibility:hidden;
+	position:absolute;
+	width:200px;
+	margin-left:-12px;
+	border:1px solid #000;
+	background:#555;
+	z-index:1000;
+	}
+#navig .smenu a {
+	display:block;
+	color:#fff;
+	font-size:12px;
+	padding:5px 0 5px 5px;
+	font-weight:normal;
+	}
+#navig .smenu a:hover {
+	color:#000;
+	background:#fff;
+	text-decoration:none;
+	}
+#navig a.menu {
+	display:block;
+	padding:11px 0 11px 0;
+	}
+#navig a.menu:hover span {
+	color:#000;
+	}
+#navig li.mns {
+	margin:0 10px;
+	}
+#navig .i {
+	width:1px;
+	height:35px;
+	background:#fff url(img/navig_i.png) no-repeat;
+	}
+#navig .start,#navig .end {
+	display:none;
+	}
+#navig,#order_step {
+	padding:10px 5px;
+	z-index:1000;
+	background:#555 url(img/menu_bkg.png) no-repeat;
+	}
+#navig{
+	padding:0 5px;
+}
+/* ------ Processus de commande ------- */
+#order_step .start {
+	display:none;
+	}
+#order_step li {
+	margin:0 20px;
+	display:inline-block;
+	color:#fff;
+	font-size:11px;
+	}
+#order_step .on {
+	font-weight:bold;
+	}
+#order_step .made {
+	text-decoration:line-through;
+	}
+#order_step .end {
+	display:none;
+	}
+/*--------------------------- PARTIE GAUCHE ---------------------------------*/
+#left_top,#left_bottom,#left .offer,#left .service,#contact_us,#newsletter,#professional,#partner {
+	display:none;
+	}
+#left {
+	width:0;
+	float:left;
+	}
+/* ------------ Recherche ------------- */
+#search {
+	position:absolute;
+	top:105px;
+	left:653px;
+	}
+#search h2 {
+	display:none;
+	}
+#search p {
+	margin:0;
+	}
+#search .ibox {
+	width:190px;
+	height:20px;
+	margin:0;
+	padding:0 5px;
+	float:left;
+	border:none;
+	}
+#search .btn_short {
+	width:22px;
+	height:20px;
+	margin:0;
+	padding:0;
+	float:left;
+	border:none;
+	}
+/*--------------------------- PARTIE LIENS ----------------------------------*/
+#link_contener {
+	width:1180px;
+	height:40px;
+	margin:0 auto;
+	clear:both;
+/* Tout sauf IE MAC \*/
+	text-align:center;
+ /* Fin Hack IE MAC */
+	}
+#link {
+	width:100%;
+	height:20px;
+	padding:20px 0 0 0;
+	background:#888 url(img/link_bkg.png) no-repeat;
+	}
+#link li {
+	display:inline;
+	margin:0 10px;
+	}
+#link a {
+	color:#000;
+	font-size:11px;
+	font-weight:normal;
+	}
+#link a:hover {
+	color:#fff;
+	}
+/*------------------------------- FOOTER -------------------------------------*/
+#footer_contener {
+	border:none;
+	background:none;
+	}
+#footer {
+	width:1180px;
+	text-align:center;
+	background:#c1c1c1;
+	}
+/*---------------------------- PAGE PANIER ----------------------------------*/
+#basket td {
+	padding:10px;
+	}
+#basket_tab td,#account_tab td {
+	min-width:80px;
+	text-align:center;
+	border:1px solid #dedede;
+	}
+#basket_tab .col1,#account_tab .col1 {
+	width:805px;
+	text-align:left;
+	}
+#basket_tab .header td,#basket .footer td,#account_tab .header td {
+	font-weight:bold;
+	}
+#basket_tab .btn_short {
+	width:20px;
+	height:20px;
+	border:none;
+	background:url(img/trash.gif) center no-repeat;
+	}
+#basket .primary {
+	display:block;
+	}
+#basket .txt_advantage {
+	font-weight:bold;
+	}
+#maj {
+	padding-top:10px;
+	margin-bottom:5px;
+	clear:both;
+	text-align:right;
+	}
+#account p {
+	margin-bottom:5px;
+	clear:both;
+	}
+#txt_account_or,#account .btn_pos {
+	text-align:center;
+	}
+#account li a:hover,#help li a:hover {
+	text-decoration:underline;
+	}
+#account li,#help li {
+	padding:3px 0;
+	}
+#account li:before,#help li:before {
+	content:"- ";
+	}
+#canvas_validation_account_cont p {
+	padding:0 0 0 5px;
+	}
+/* ---------- Acces reserve ----------- */
+#account .new_contener,#account .old_contener {
+	width:280px;
+	margin:0 10px;
+	float:left;
+	}
+#account .new,#account .old {
+	height:160px;
+	padding:10px;
+	margin:10px 0;
+	border:1px solid #dedede;
+	}
+#account .z003 span,#account .z004 span {
+	width:110px;
+	display:block;
+	float:left;
+	}
+#account .z003 input,#account .z004 input {
+	width:140px;
+	margin-bottom:5px;
+	float:left;
+	}
+/* ------- Declaration a la CNIL ------ */
+.a001,.r003,.o001,.o417 {
+	padding:5px 0;
+	text-align:center;
+	}
+/*--------------------------- LISTE PRODUIT ---------------------------------*/
+#list_contener {
+	background:none;
+	}
+.sort-by {
+	padding:10px 0;
+	}
+#list .uneven,#list .pair {
+	margin:0;
+	margin-left:-0.23em;
+	display:inline-block;
+	width:25%;
+	box-sizing:border-box;
+	vertical-align:top;
+	}
+#list .list_content {
+	height:auto;
+	margin:0 5px 15px;
+	padding:10px;
+	text-align:center;
+	background:#dedede;
+	box-sizing:border-box;
+	}
+#list .a-view {
+	display:block;
+	width:150px;
+	height:150px;
+	margin:0 auto 10px auto;
+	border:1px solid #999;
+	background:#fff;
+	}
+#list .view {
+	max-width:150px;
+	max-height:150px;
+	margin:0;
+	float:none;
+	}
+#list .primary {
+	margin:5px 0 10px;
+	}
+#list .secondary {
+	margin:5px 0 10px;
+	}
+#list .price_pos,#list .list_bottom,#list .stock_pos,#list .list_btn {
+	display:block;
+	margin:10px 0;
+	text-align:center;
+	}
+#list .logo {
+	float:none;
+	}
+#list .block_quantity {
+	display:block;
+	margin:0 0 10px 0;
+	}
+#list.associed h2 {
+	width:100%;
+	float:left;
+	clear:both;
+	}
+/* ------------ Pagination ------------ */
+#pagination {
+	width:100%;
+	margin:auto;
+	clear:both;
+	text-align:center;
+	}
+#pagination ul {
+	margin:10px auto;
+	}
+#pagination li {
+	display:inline;
+	padding:10px 5px 5px 5px;
+	}
+#pagination li a {
+	text-decoration:underline;
+	}
+/*--------------------------- FICHE PRODUIT ---------------------------------*/
+#product h2 {
+	color:#999;
+	padding:0 0 5px 0;
+	}
+/* --------- Image principale --------- */
+#image.view {
+	position:relative;
+	z-index:1;
+	}
+#image .comment {
+	padding:5px 0;
+	clear:both;
+	}
+#image.view_large .comment {
+	text-align:center;
+	}
+/* ------- Vues supplementaires ------- */
+.pd07 {
+	width:300px;
+	}
+.pd07 span {
+	display:block;
+	clear:both;
+	}
+#image .pic_another_pic {
+	width:80px;
+	margin:0;
+	padding:5px 3px 0 0;
+	}
+/* -------------- Zoom ---------------- */
+.pd_zoom a {
+	color:#000;
+	}
+.pd_zoom a:hover {
+	color:#777;
+	}
+.zvc {
+	position:absolute;
+	top:0;
+	left:0;
+	}
+#product_zoom {
+	position:absolute;
+	top:5px;
+	left:5px;
+	}
+.popup_zoom,#product_zoom.popup_zoom {
+	position:absolute;
+	top:-50px;
+	left:0;
+	padding:20px;	
+	background:#fff;
+	border:1px solid #dedede;
+	}
+#product_zoom.work_margin {
+	margin:0;
+	}
+.btn_zoom {
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	font-size:0;
+	text-align:left;
+	border:none;
+	background:none;
+	}
+.btn_zoom:hover {
+	background:none;
+	}
+	
+#image_zoom img, #imgZoom{
+	max-width:none;
+}
+/* -------------- feature ------------- */
+#feature {
+	width:250px;
+	padding-bottom:10px;
+	float:left;
+	}
+#feature p {
+	width:100%;
+	float:left;
+	}
+#feature .error {
+	margin:10px 0;
+	}
+#feature .price_pos,#feature .stock_pos {
+	width:100%;
+	margin:0 0 5px 0;
+	float:left;
+	}
+#feature .btn_pos {
+	text-align:left;
+	}
+#feature .price,#feature .pstrike,#feature .pweight,#feature .quantity_stock,#feature .en_stock,#feature .out_stock {
+	display:block;
+	clear:both;
+	margin-bottom:5px;
+	}
+#feature .logo {
+	margin:0;
+	padding:5px 0;
+	float:left;
+	clear:both;
+	}
+/* ----------- Les options ------------ */
+#option_contener {
+	width:250px;
+	float:left;
+	}
+.option {
+	width:250px;
+	float:left;
+	padding:5px 0;
+	}
+.option p {
+	width:100%;
+	margin:5px 0;
+	clear:both;
+	}
+.option .pdt_btn {
+	width:200px;
+	height:22px;
+	padding:0 0 0 5px;
+	border:none;
+	color:#000;
+	text-align:left;
+	background:url(img/pic_select.gif) no-repeat;
+	}
+.option .pdt_select {
+/* Tout sauf IE MAC \*/
+	float:left;
+ /* Fin Hack IE MAC */
+ 	padding:0px;
+	}
+.option .prod_choice img {
+	padding-right:0 5px 0 0;
+	}
+.option .prod_choice {
+	width:198px;
+	padding:2px 0;
+	visibility:hidden;
+	position:absolute;
+	z-index:2;
+	background-color:#fff;
+	border:1px solid #dedede;
+	}
+.option .prod_choice a {
+	padding:2px 5px;
+	display:block;
+	color:#000;
+	vertical-align:top;
+	text-decoration:none;
+	}
+.option .prod_choice a:hover {
+	color:#fff;
+	background:#555;
+	}
+.option .option_price {
+	color:#000;
+	}
+.option a:hover .option_price {
+	color:#fff;
+	}
+.option select {
+	color:#000;
+	}
+.option .opt_choice li {
+	padding:5px 10px 5px 0;
+	float:left;
+	}
+/* ------------- Detail ----------------*/
+#detail {
+	clear:both;
+	}
+#detail h2 {
+	color:#555;
+	}
+#detail table {
+	float:left;
+	}
+/* ----------- Formulaire --------------*/
+#pdt_form table {
+	width:100%;
+	float:left;
+	padding-bottom:10px;
+	}
+#btn_send_form {
+	margin:5px;
+	}
+/* ------------- Divers ----------------*/
+.cofidis img,.cofidis_basket img {
+	margin-top:15px;
+	float:left;
+	border:none;
+	}
+/*---------------------------- Fil d'Arianne --------------------------------*/
+#navigation {
+	width:1180px;
+	display:inline-block;
+	padding:10px 0 5px 0;
+	}
+#navigation li {
+	background:url(img/arianne_li.png) right center no-repeat;
+	}
+#navigation li:first-of-type {
+	padding-left:0;
+	}
+#navigation span {
+	color:#777;
+	}
+#navigation li:last-of-type span {
+	color:#333;
+	}
+#navigation a:hover span {
+	color:#333;
+	}
+#navigation li.end {
+	background:none;
+	}
+/*------------------------------- EXTRADIV -----------------------------------*/
+/*#extradiv {
+	width:1180px;
+	margin:0 auto;
+	text-align:left;
+	}
+#extradiv1 {	
+	position:absolute;
+	top:95px;
+	margin-left:0;
+  } */
+/*--------------------------- PAGE D'ACCUEIL --------------------------------*/
+#home .btn_pos,#home .inter,#home .list_bottom,#home .product_bottom,#home .header,#home h1,#home .IT,#home .OT,#home .content {
+	display:none;
+	}
+#home p.text {
+	margin:0;
+	}
+#home td {
+	vertical-align:top;
+	}
+/* -------------- TC_01 --------------- */
+#tc_01 {
+	padding:0;
+	}
+#tc_01 h2 {
+	
+	}	
+/* -------------- TC_02 --------------- */
+#tc_02 {
+	padding:0;
+	}
+#tc_02 h2 {
+	
+	}
+/* ---------- Liste produit ----------- */
+#home .list_content {
+	width:25%;
+	height:auto;
+	margin:0 0 15px -0.25em;
+	padding:10px;
+	display:inline-block;
+	vertical-align:top;
+	text-align:center;
+	box-sizing:border-box;
+	}
+#home .list_content .a-view {
+	display:none;
+	width:150px;
+	height:150px;
+	margin:0 auto 10px auto;
+	border:1px solid #999;
+	}
+#home .list_content .view {
+	max-width:150px;
+	max-height:150px;
+	margin:0;
+	float:none;
+	}
+#home .list_content .primary {
+	margin:10px 0 15px;
+	}
+#home .list_content .secondary {
+	margin:10px 0 15px;
+    display:none;
+	}
+#home .list_content .price_pos,#home .list_content .list_bottom,#home .list_content .stock_pos,#home .list_content .list_btn {
+	display:block;
+	margin:10px 0;
+	text-align:center;
+	}
+#home .list_content .logo {
+	float:none;
+	}
+#home .block_quantity {
+	display:block;
+	margin:0 0 10px 0;
+	}
+/*---------------------- FIN de la PAGE D'ACCUEIL ---------------------------*/
+.select_date_day {width:42px;}
+.select_date_month {width:90px;}
+.select_date_year {width:60px;}
+.ibox_full {width:100%;}
+.ibox_long {width:190px;}
+fieldset {border:1px solid #dedede;}
+legend {text-align:left;}
+
+#popnoel{background:rgba(0,0,0,0.3);position:fixed;width:100%;height:100%;top:0;left:0;z-index:10000;}
+#popnoel div{position:absolute;background:#FFF;width:300px;height:180px;top:50%;left:50%;transform:translate(-50%,-50%);-webkit-transform:translate(-50%,-50%);-o-transform:translate(-50%,-50%);text-align:center;}
+#popnoel div i{position:absolute;cursor:pointer;right:5px;top:5px;}
+#popnoel div span{display:block;background:#9DCB44;}
+#noel{text-align:center;font-weight:700;color:#F00;}

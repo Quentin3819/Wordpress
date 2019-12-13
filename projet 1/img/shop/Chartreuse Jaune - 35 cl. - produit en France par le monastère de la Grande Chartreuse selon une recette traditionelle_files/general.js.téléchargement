@@ -1,0 +1,20 @@
+$(function() {
+
+    function deplacer_arguments() {
+        var extra_arguments = $('#extra_arguments');
+        
+        if(extra_arguments.length != 0) {
+            if($('#footer_contener').length != 0)
+                $('#footer_contener').before(extra_arguments.html());
+            
+            extra_arguments.remove();
+        }
+    }
+    
+    function initialiser() {
+        deplacer_arguments();
+    }
+    
+    initialiser();
+	$("#popnoel i").click(function(){$("#popnoel").fadeOut();});
+});

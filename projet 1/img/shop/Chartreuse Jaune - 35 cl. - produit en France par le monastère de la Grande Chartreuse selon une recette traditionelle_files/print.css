@@ -1,0 +1,27 @@
+/* FEUILLE DE STYLE SF V2 PRINT 800PX © STORE-FACTORY MAI 2005 */
+
+html, form, ul, p, span, body, input, select, textarea, h1, h2, h3, a, td {
+    color:#000000;
+    }
+body {
+    background-color: #FFFFFF;
+    }
+#top, #navig, #left, #link, #order_step  {
+    display: none;
+    }
+#work, #master {
+    background: none;
+    background-color: #FFFFFF;
+    border:none;
+    float: left;
+    width:550px;
+    }
+#order_contener {
+    text-align: left;
+    }
+#refs, #pagination {
+    display: none;
+    }
+.prod_choice {
+    display: none;
+    }

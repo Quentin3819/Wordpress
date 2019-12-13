@@ -1,0 +1,510 @@
+function getHTTPObject()
+{
+    if (window.XMLHttpRequest)
+        return new XMLHttpRequest();
+    else if (window.ActiveXObject)
+        return new ActiveXObject("Microsoft.XMLHTTP");
+    else
+        return false;
+}
+
+function loadCategory(listbox, asc_id, asv_parentid, selected_value)
+{
+    if (listbox) {
+        var xhr_object = null;
+        xhr_object = getHTTPObject();
+
+        xhr_object.open("GET", "/mag/getCategory.php?asc_id=" + asc_id + "&asv_parentid=" + asv_parentid, true);
+
+        reinitList(listbox);
+
+        xhr_object.onreadystatechange = function () {
+            if (xhr_object.readyState == 4) {
+                var reponse = xhr_object.responseText;
+                var ligne = reponse.split("<br/>");
+
+                for (var i = 0; i < ligne.length; i++) {
+                    if (ligne[i] != '') {
+                        var champ = ligne[i].split("|||");
+                        var idx = listbox.options.length;
+
+                        listbox.options[idx] = new Option(champ[1], champ[0]);
+
+                        if (selected_value == champ[0]) {
+                            listbox.options[idx].selected = true;
+                        }
+                    }
+                }
+
+            }
+        };
+
+        xhr_object.send(null);
+    }
+}
+
+function getBasket(lang)
+{
+    var xhr_object = null;
+    xhr_object = getHTTPObject();
+
+    xhr_object.open("GET", "/mag/getBasket.php?lang=" + lang + "&rnd=" + Math.random(), true);
+
+    xhr_object.onreadystatechange = function () {
+        if (xhr_object.readyState == 4) {
+            var reponse = xhr_object.responseText;
+
+            if (document.getElementById('d_basket_detail'))
+                var basketRightActive = 1;
+
+            if (document.getElementById('totalit_basket'))
+                var basketSupActive = 1;
+
+            var ligne = reponse.split("<br/>");
+            var numit = 0;
+            var totalit = 0;
+            var basket_html = "";
+
+            for (var i = 0; i < ligne.length; i++) {
+                if (ligne[i] != '') {
+                    var champ = ligne[i].split("|||");
+
+                    if (basketSupActive == 1 || basketRightActive == 1) {
+                        var champ12 = parseInt(champ[1]) * parseFloat(champ[2]);
+                        totalit += champ12;
+
+                        if (basketSupActive == 1) {
+                            numit += parseInt(champ[1]);
+                        }
+
+                        if (basketRightActive == 1) {
+                            var champ1 = parseInt(champ[1]) - 1;
+                            var tp;
+
+                            if (champ[1] == 1) tp = 'del'; else tp = 'rem';
+
+                            var champ2 = parseInt(champ[1]) + 1;
+
+                            var vl_champ2 = champ12.toFixed(2);
+
+                            var currency = champ[6];
+
+                            basket_html = basket_html + "\r\n<span class=\"primary\">" + champ[3] + "</span><div class=\"quantity\"><input class='btn_quantity' type=button value='-' onclick=\"quantity('moins',document.getElementById('input_" + i + "'));updateBasket('" + champ[0] + "', '" + tp + "', '&bskit_id=" + champ[4] + "&ctx_qty_" + champ[4] + "=" + champ1 + "&lang=" + lang + champ[5] + "')\"><input id='input_" + i + "' type='hidden' disabled value='" + champ[1] + "'/><span class=\"quantity_value\">" + champ[1] + "</span><input class='btn_quantity' type='button' value='+' onclick=\"quantity('plus',document.getElementById('input_" + i + "'));updateBasket('" + champ[0] + "', 'add', '&bskit_id=" + champ[4] + "&ctx_qty_" + champ[4] + "=" + champ2 + "&lang=" + lang + champ[5] + "')\"></div><span class=\"price\">" + vl_champ2 + currency + "</span>";
+                        }
+                    }
+                }
+            }
+            if (totalit > 0) {
+                totalit = totalit.toFixed(2);
+            }
+            setHtmlBasetSupRight(numit, totalit, basket_html);
+        }
+    };
+
+    xhr_object.send(null);
+    return '1';
+}
+
+function callGetBasket(lang, basketRightActive, Cart_numit, Cart_totalit)
+{
+    if (basketRightActive == '1' || Cart_numit == '' || Cart_totalit == '') {
+        getBasket(lang);
+    } else {
+        setHtmlBasetSupRight(Cart_numit, Cart_totalit, '');
+    }
+}
+
+function setHtmlBasetSupRight(numit, totalit, basket_html)
+{
+    Cart_numit = numit;
+    Cart_totalit = totalit;
+
+    if (document.getElementById('d_basket_detail'))
+        var basketRightActive = 1;
+
+    if (document.getElementById('totalit_basket'))
+        var basketSupActive = 1;
+
+    if (basketSupActive == 1) {
+        showChar(Cart_numit);
+        if (Cart_numit > 0) {
+            document.getElementById('numit_basket').innerHTML = Cart_numit;
+        }
+        if (document.getElementById("top_basket_numits")) {
+            document.getElementById('top_basket_numits').innerHTML = Cart_numit;
+        }
+        if (Cart_totalit > 0) {
+            document.getElementById('totalit_basket').innerHTML = Cart_totalit;
+            showChar(Cart_numit, 1);
+        } else {
+            document.getElementById('totalit_basket').innerHTML = '';
+        }
+    }
+
+    if (basketRightActive == 1) {
+        if (basket_html != '') {
+            //Cart_basketRightHtml = basket_html;
+            if (document.getElementById('d_basket_detail')) {
+                document.getElementById('d_basket_detail').innerHTML = basket_html;
+            }
+        }
+        if (document.getElementById('total_dbasket')) {
+            showChar_dbasket(Cart_totalit);
+            document.getElementById('total_dbasket').innerHTML = Cart_totalit;
+        }
+
+    }
+}
+
+function reinitList(listbox)
+{
+    if (listbox) {
+        listbox.options.length = 0;
+        var valueListName = '';
+        if (document.getElementById('msg_traduct_select')) {
+            valueListName = document.getElementById('msg_traduct_select').value;
+        }
+        listbox.options[listbox.options.length] = new Option(valueListName, 0);
+    }
+}
+
+function loadSentensPopupGroupeDefaut(valueCPID, typeCP, store_id, GPdefaut)
+{
+    var xhr_object = null;
+    xhr_object = getHTTPObject();
+    xhr_object.open("GET", "/mag/groupSelect.php?valueCPID=" + valueCPID + "&typeCP=" + typeCP + "&store_id=" + store_id + "&GPdefaut=" + GPdefaut, true);
+
+    xhr_object.onreadystatechange = function () {
+        if (xhr_object.readyState == 4) {
+            var reponse = xhr_object.responseText;
+            if (reponse == "ok") {
+                document.location.reload();
+            } else {
+                document.getElementById('divSelectionGroup').style.visibility = 'hidden';
+                document.getElementById('divGroupDefaut').style.visibility = 'visible';
+            }
+        }
+    };
+
+    xhr_object.send(null);
+}
+
+function getPrice(product_id)
+{
+    var nb = 1;
+
+    if (document.getElementById('nb'))
+        nb = document.getElementById('nb').value;
+
+    var optid_array = new Array();
+    var i = 1;
+
+    while (document.getElementById('hidden_choice_opt_' + i)) {
+        optid_array.push(document.getElementById('hidden_choice_opt_' + (i)).value);
+        i++;
+    }
+
+    //calcul prix
+    var xhr_object = null;
+    xhr_object = getHTTPObject();
+    xhr_object.open("GET", "/mag/getPrice.php?product_id=" + product_id + "&nb=" + nb + "&optid_array=" + optid_array, true);
+
+    xhr_object.onreadystatechange = function () {
+        if (xhr_object.readyState == 4) {
+            var getPrice = xhr_object.responseText;
+            var champ = getPrice.split("|");
+            var priceTTC = champ[2];
+            if (document.getElementById('ajaxPriceTTC'))
+                document.getElementById('ajaxPriceTTC').innerHTML = champ[0];
+
+            if (document.getElementById('pdt_pweight')) {
+                var pdtQuantity = new Number(document.getElementById('pdt_quantity').value);
+                if (pdtQuantity > 0) {
+                    var priceUnit = priceTTC / pdtQuantity;
+                    priceUnit = priceUnit.toFixed(2);
+                    document.getElementById('pdt_pweight').innerHTML = priceUnit;
+                }
+            }
+
+            if (document.getElementById('ajaxPriceHT')) {
+                document.getElementById('ajaxPriceHT').innerHTML = champ[1];
+            }
+
+            if (document.getElementById('ajaxPriceOld') && champ[3] != '') {
+                document.getElementById('ajaxPriceOld').innerHTML = champ[3];
+            }
+        }
+    };
+
+    xhr_object.send(null);
+}
+
+function checkStockAndAdd(pdtId, action, param)
+{
+    var optid_array = [];
+    var listoptid_array = [];
+    var opt_param = "";
+    var nb = getValueFromParams(param, 'nb');
+
+    if (action.substring(0, 4) != "list") {
+        if (action == "addAndRefresh") {
+            var i = 1;
+            while (getValueFromParams(param, 'hidden_choice_opt_' + i) != null) {
+                optid_array.push(getValueFromParams(param, 'hidden_choice_opt_' + i));
+                listoptid_array.push(getValueFromParams(param, 'hidden_choice_listopt_' + i));
+                i++;
+            }
+        } else {
+            var i = 1;
+            while (document.getElementById('hidden_choice_opt_' + i)) {
+                optid_array.push(document.getElementById('hidden_choice_opt_' + i).value);
+                listoptid_array.push(document.getElementById('hidden_choice_listopt_' + i).value);
+                opt_param = opt_param + "&input_choice_opt_" + i + "=" + document.getElementById('input_choice_opt_' + i).value;
+                opt_param = opt_param + "&hidden_choice_opt_" + i + "=" + document.getElementById('hidden_choice_opt_' + i).value;
+                opt_param = opt_param + "&hidden_choice_listopt_" + i + "=" + document.getElementById('hidden_choice_listopt_' + i).value;
+
+                i++;
+            }
+
+        }
+    } else if (action == "listPopup") {
+        action = "popup";
+    }
+
+    var xhr_object = null;
+    xhr_object = getHTTPObject();
+
+    xhr_object.open("GET", "/mag/getStock.php?pdtId=" + pdtId + "&nb=" + nb + "&listoptid_array=" + listoptid_array + "&optid_array=" + optid_array + "&rnd=" + Math.random(), true);
+
+    var lang = getValueFromParams(param, "lang");
+
+    xhr_object.onreadystatechange = function () {
+        if (xhr_object.readyState == 4) {
+            var reponse = xhr_object.responseText;
+
+            if (reponse == "0") {
+                document.getElementById('alertStock').style.display = "inline";
+            } else if (reponse == "notSelected1") {
+                document.getElementById('alertOpt').style.display = "inline";
+            } else if (reponse == "notSelected2") {
+                document.getElementById('alertOpt').style.display = "inline";
+            } else if (reponse == "-1") {
+                document.getElementById('alertMiniQuantityPurchase').style.display = "inline";
+            } else {
+                document.getElementById('alertStock').style.display = "none";
+
+                if (action == "pdtToBasket") {
+                    document.getElementById('formulaire').action = "/mag/" + lang + "/shoppingcart.php?action=insert&" + param + opt_param;
+                    document.getElementById('formulaire').submit();
+                } else if (action == "formToBasket") {
+                    document.getElementById('formPost').action = "/mag/" + lang + "/form_post.php?action=valid&" + param + opt_param;
+                    document.getElementById('formPost').submit();
+                } else if (action == "popup") {
+                    param += '&checkStockAndAdd=' + reponse + '&instock=' + reponse;
+                    setBasket(pdtId, "set", param + opt_param);
+                } else if (action == "addAndRefresh") {
+                    param += '&instock=' + reponse;
+                    setBasket(pdtId, "add", param + opt_param);
+                } else if (action == "listPdtAssociatedToBasket") {
+                    document.getElementById('formAssociated').action = "/mag/" + lang + "/shoppingcart.php?action=insert&" + param + opt_param;
+                    document.getElementById('formAssociated').submit();
+                } else if (action == "listPdtListToBasket" || action == "listPdtHomeToBasket") {
+                    document.getElementById('formulaire').action = "/mag/" + lang + "/shoppingcart.php?action=insert&" + param + opt_param;
+                    document.getElementById('formulaire').submit();
+                } else if (action == "listPdtSearchToBasket") {
+                    document.getElementById('formulaire_search').action = "/mag/" + lang + "/shoppingcart.php?action=insert&" + param + opt_param;
+                    document.getElementById('formulaire_search').submit();
+                }
+            }
+        }
+    };
+
+    xhr_object.send(null);
+}
+
+function updateBasket(pdtId, action, param)
+{
+    param = param + '&isBasketSup=1';
+    if (action == "rem") // On retire une unite
+    {
+        setBasket(pdtId, "rem", param);
+    } else if (action == "del") // On supprime le produit
+    {
+        setBasket(pdtId, "del", param);
+    } else if (action == "add") // On ajoute une unite
+    {
+        checkStockAndAdd(pdtId, "addAndRefresh", param + '&popup_inactive=1');
+    }
+}
+
+function setBasket(pdtId, action, param)
+{
+    var xhr_object = null;
+    xhr_object = getHTTPObject();
+    xhr_object.open("GET", "/mag/setBasket.php?id=" + pdtId + "&type=" + action + "&rnd=" + Math.random() + param, true);
+
+    xhr_object.onreadystatechange = function () {
+        if (xhr_object.readyState == 4) {
+            var response = JSON.parse(xhr_object.responseText);
+
+            if (document.getElementById('item_basket') || document.getElementById('d_basket')) {
+                getBasket(getValueFromParams(param, "lang"));
+            }
+
+            if (action != "del" && action != "rem") {
+                var instock = getValueFromParams(param, "instock");
+                var stockorder = getValueFromParams(param, "nb");
+                instock = parseInt(instock);
+                stockorder = parseInt(stockorder);
+
+                var popup_inactive = getValueFromParams(param, "popup_inactive");
+
+                var numItemAdded = 0;
+
+                if (!popup_inactive) {
+                    if (stockorder > instock) {
+                        document.getElementById('popupbkjs_stockinsufficient').style.display = 'block';
+                        document.getElementById('popupbkjs_stockinsufficient_number').innerHTML = instock;
+
+                        numItemAdded = instock;
+                    } else {
+                        document.getElementById('popupbkjs_stockinsufficient').style.display = 'none';
+                        numItemAdded = stockorder;
+                    }
+
+                    document.getElementById('popupbkjs_quantity').innerHTML = 'x ' + numItemAdded;
+
+                    var basketOnglet = '';
+
+                    if (document.getElementById('product')) {
+                        if (document.getElementById('briefcase_popup_basket')) {
+                            basketOnglet = document.getElementById('briefcase_popup_basket').innerHTML;
+                        } else if (document.getElementById('list_contener') && document.getElementById('pdt_popup_basket')) {
+                            basketOnglet = document.getElementById('title_associed').outerHTML;
+                            for (var i = 1; i <= 3; i++) {
+                                if (document.getElementById('item' + i))
+                                    basketOnglet += document.getElementById('item' + i).outerHTML;
+                            }
+                        }
+                        basketOnglet = '<div class="content_popup_bsk_onglet">' + basketOnglet + '</div>';
+                        sf_innerHTML('content_popup_bsk_onglet', basketOnglet);
+                    }
+
+                    sf_innerHTML('content_popup_div_bkjs', response.contentHtml);
+
+                    /* price total*/
+                    if (document.getElementById('popupbkjs_price_hidden')) {
+                        var price = parseFloat(document.getElementById('popupbkjs_price_hidden').innerHTML);
+                        document.getElementById('popupbkjs_pricetotal').innerHTML = precisionRound(price * numItemAdded, 2);
+                    }
+
+                    if (document.getElementById('popupbkjs_currency_hidden') && document.getElementById('popupbkjs_currency')) {
+                        document.getElementById('popupbkjs_currency').innerHTML = document.getElementById('popupbkjs_currency_hidden').innerHTML;
+                    }
+                    document.getElementById('popup_div_bkjs').style.display = 'inline';
+                }
+
+                if (typeof (addCartCallBack) === "function") {
+                    addCartCallBack(pdtId, response.bskitId, numItemAdded);
+                }
+            }
+        }
+    };
+
+    xhr_object.send(null);
+}
+
+function getValueFromParams(params, param)
+{
+    var tbParam = params.split("&");
+    for (var i = 0; i < tbParam.length; i++) {
+        if (tbParam[i].substring(0, param.length) == param) {
+            var val = tbParam[i].split("=");
+            return val[1];
+        }
+    }
+    return null;
+}
+
+function getReversoForm(number, idco, host)
+{
+    var xhr_object = getHTTPObject();
+
+    xhr_object.open("GET", "/mag/getReversoForm.php?number=" + number + "&idco=" + idco + "&host=" + host + "&rnd=" + Math.random(), true);
+
+    xhr_object.onreadystatechange = function () {
+        if (xhr_object.readyState == 4) {
+            var reponse = xhr_object.responseText;
+
+            eval(reponse);
+
+        }
+    };
+    xhr_object.send(null);
+}
+
+function deleteEventCookie(evtId)
+{
+    var xhr_object = getHTTPObject();
+    xhr_object.open("GET", "/mag/eventCookie.php?evtId=" + evtId + "&rnd=" + Math.random(), true);
+    xhr_object.send(null);
+}
+
+function addWishList()
+{
+    var id = this.getAttribute('data-id');
+    var action = this.getAttribute('data-action');
+    var target = this.getAttribute('data-target');
+
+    var add = 0;
+
+    if (this.className === 'wishlist') {
+        this.className += ' wishlist_added';
+        add = 1;
+    } else {
+        this.className = 'wishlist';
+        add = 0;
+    }
+
+    if (action === 'delete') {
+        document.getElementById(target).style.display = "none";
+    }
+
+    var xhr_object = getHTTPObject();
+
+    xhr_object.open("GET", "/mag/addWishList.php?id=" + id + "&add=" + add, true);
+    xhr_object.send(null);
+}
+
+function replicateOrder(id)
+{
+    var xhr_object = null;
+    xhr_object = getHTTPObject();
+
+    xhr_object.open("GET", "/mag/replicateOrder.php?id=" + id + "&rnd=" + Math.random(), true);
+
+    xhr_object.onreadystatechange = function () {
+        if (xhr_object.readyState == 4) {
+            if (xhr_object.responseText == "0") {
+                replicateOrderConfirm(false);
+            } else {
+                replicateOrderConfirm(true);
+            }
+        }
+    };
+
+    xhr_object.send(null);
+}
+
+function replicateOrderConfirm(isOk)
+{
+    if (document.getElementById('popup_ok_replicateorder')) {
+        if (isOk === true) {
+            document.getElementById('popup_ok_replicateorder').style.display = 'inline';
+            setTimeout("document.getElementById('popup_ok_replicateorder').style.display = 'none';", 5000);
+        } else {
+            document.getElementById('popup_nok_replicateorder').style.display = 'inline';
+            setTimeout("document.getElementById('popup_nok_replicateorder').style.display = 'none';", 5000);
+        }
+    }
+}

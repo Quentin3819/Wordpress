@@ -1,0 +1,508 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Natural Lite\n"
+"POT-Creation-Date: 2017-04-11 16:06-1000\n"
+"PO-Revision-Date: 2017-04-11 16:06-1000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:20 404.php:41
+msgid "Not Found, Error 404"
+msgstr ""
+
+#: 404.php:21 404.php:42
+msgid "The page you are looking for no longer exists."
+msgstr ""
+
+#: comments.php:12
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+
+#: comments.php:23
+#, php-format
+msgid "One Comment on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s Comments on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:30 comments.php:52
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:31 comments.php:53
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:32 comments.php:54
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:66
+msgid "Comments are closed."
+msgstr ""
+
+#: content/content-author.php:27
+msgid "Website:"
+msgstr ""
+
+#: content/content-author.php:28
+msgid "Link to author page"
+msgstr ""
+
+#: content/content-author.php:33
+msgid "Profile:"
+msgstr ""
+
+#: content/content-author.php:41
+#, php-format
+msgid "Posts by %1$s:"
+msgstr ""
+
+#: content/content-author.php:54
+msgid "No posts by this author."
+msgstr ""
+
+#: content/content-none.php:16
+msgid "No Options Saved"
+msgstr ""
+
+#: content/content-none.php:17
+#, php-format
+msgid ""
+"Please set and save the Theme Options for the home page within the <a href="
+"\"%1$s\">Customizer</a>."
+msgstr ""
+
+#: content/content-none.php:21
+msgid "No Results Found"
+msgstr ""
+
+#: content/content-none.php:22
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: content/home-page.php:16 content/home-page.php:29 content/home-post.php:40
+#: content/slider-featured.php:29 content/slider-featured.php:33
+#: loop-archive.php:24 loop-blog.php:28
+#, php-format
+msgid "Permalink to %s"
+msgstr ""
+
+#: content/home-page.php:29
+msgid "Learn More"
+msgstr ""
+
+#: content/home-post.php:63 content/home-post.php:90 loop-archive.php:19
+#: loop-blog.php:23 loop-post.php:16
+msgid "Posted on"
+msgstr ""
+
+#: content/home-post.php:63 content/home-post.php:90 loop-archive.php:19
+#: loop-blog.php:23 loop-post.php:16
+msgid "F j, Y"
+msgstr ""
+
+#: content/home-post.php:64 content/home-post.php:91
+msgid "Comment"
+msgstr ""
+
+#: content/home-post.php:64 content/home-post.php:91 loop-archive.php:20
+#: loop-blog.php:24 loop-post.php:17
+msgid "1 Comment"
+msgstr ""
+
+#: content/home-post.php:116 functions.php:455
+msgid "&laquo;"
+msgstr ""
+
+#: content/home-post.php:117 functions.php:456
+msgid "&raquo;"
+msgstr ""
+
+#: content/home-post.php:131 loop-blog.php:56
+msgid "No Posts Found"
+msgstr ""
+
+#: content/home-post.php:132 loop-blog.php:57
+msgid ""
+"We're sorry, but no posts have been found. Create a post to be added to this "
+"section, and configure your theme options."
+msgstr ""
+
+#: footer.php:47
+msgid "Copyright"
+msgstr ""
+
+#: footer.php:47
+msgid "Y"
+msgstr ""
+
+#: footer.php:47
+msgid "All Rights Reserved"
+msgstr ""
+
+#: footer.php:49
+#, php-format
+msgid "Theme: %1$s by %2$s"
+msgstr ""
+
+#: footer.php:49
+msgid "RSS Feed"
+msgstr ""
+
+#: functions.php:31
+msgid "Header Menu"
+msgstr ""
+
+#: functions.php:32
+msgid "Social Menu"
+msgstr ""
+
+#: functions.php:53
+msgid "Default Custom Header"
+msgstr ""
+
+#: functions.php:108
+msgid "My Awesome <b>Organic Themes</b><br /> Website"
+msgstr ""
+
+#: functions.php:121
+msgid "Services"
+msgstr ""
+
+#: functions.php:122
+msgid ""
+"<p>This is an example services page. You may want to write about the various "
+"services your business provides.</p>"
+msgstr ""
+
+#: functions.php:134
+msgid "Logo"
+msgstr ""
+
+#: functions.php:138
+msgid "About Image"
+msgstr ""
+
+#: functions.php:142
+msgid "Services Image"
+msgstr ""
+
+#: functions.php:146
+msgid "Contact Image"
+msgstr ""
+
+#: functions.php:154
+msgid "Primary Navigation"
+msgstr ""
+
+#: functions.php:196
+msgid ""
+"Enjoying the <b>Natural Lite</b> theme? Consider <a href=\"https://"
+"organicthemes.com/theme/natural-theme/\" target=\"_blank\">upgrading</a> to "
+"the premium version for more customization options, page templates and "
+"support."
+msgstr ""
+
+#: functions.php:283
+msgid "Default Sidebar"
+msgstr ""
+
+#: functions.php:291
+msgid "Left Sidebar"
+msgstr ""
+
+#: functions.php:299
+msgid "Footer Widgets"
+msgstr ""
+
+#: functions.php:343
+msgid "Pingback:"
+msgstr ""
+
+#: functions.php:343 functions.php:383
+msgid "Edit"
+msgstr ""
+
+#. translators: 1: comment author, 2: date and time
+#: functions.php:361
+#, php-format
+msgid "%1$s <br/> %2$s <br/>"
+msgstr ""
+
+#. translators: 1: date, 2: time
+#: functions.php:367
+#, php-format
+msgid "%1$s"
+msgstr ""
+
+#: functions.php:376
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: functions.php:381
+msgid "Reply"
+msgstr ""
+
+#: header.php:110
+msgid "Menu"
+msgstr ""
+
+#: includes/customizer.php:22
+msgid "&mdash; Select &mdash;"
+msgstr ""
+
+#: includes/customizer.php:55
+msgid "2 Seconds"
+msgstr ""
+
+#: includes/customizer.php:56
+msgid "4 Seconds"
+msgstr ""
+
+#: includes/customizer.php:57
+msgid "6 Seconds"
+msgstr ""
+
+#: includes/customizer.php:58
+msgid "8 Seconds"
+msgstr ""
+
+#: includes/customizer.php:59
+msgid "10 Seconds"
+msgstr ""
+
+#: includes/customizer.php:60
+msgid "12 Seconds"
+msgstr ""
+
+#: includes/customizer.php:61
+msgid "20 Seconds"
+msgstr ""
+
+#: includes/customizer.php:62
+msgid "30 Seconds"
+msgstr ""
+
+#: includes/customizer.php:63
+msgid "1 Minute"
+msgstr ""
+
+#: includes/customizer.php:64
+msgid "Hold Frame"
+msgstr ""
+
+#: includes/customizer.php:96 includes/customizer.php:205
+msgid "Left Align"
+msgstr ""
+
+#: includes/customizer.php:97 includes/customizer.php:206
+msgid "Center Align"
+msgstr ""
+
+#: includes/customizer.php:98 includes/customizer.php:207
+msgid "Right Align"
+msgstr ""
+
+#: includes/customizer.php:174
+msgid "Display Site Title"
+msgstr ""
+
+#: includes/customizer.php:188
+msgid "Display Site Tagline"
+msgstr ""
+
+#: includes/customizer.php:202
+msgid "Logo & Nav Alignment"
+msgstr ""
+
+#: includes/customizer.php:219
+msgid "Theme Options"
+msgstr ""
+
+#: includes/customizer.php:220
+msgid "Set and save options for the homepage and blog page template."
+msgstr ""
+
+#: includes/customizer.php:231
+msgid "Home Slideshow Category"
+msgstr ""
+
+#: includes/customizer.php:244
+msgid "Home Featured Page Left"
+msgstr ""
+
+#: includes/customizer.php:257
+msgid "Home Featured Page Middle"
+msgstr ""
+
+#: includes/customizer.php:270
+msgid "Home Featured Page Right"
+msgstr ""
+
+#: includes/customizer.php:283
+msgid "Home News Category"
+msgstr ""
+
+#: includes/customizer.php:296
+msgid "Home News Post Number"
+msgstr ""
+
+#: includes/customizer.php:309
+msgid "Blog Page Template Category"
+msgstr ""
+
+#: includes/typefaces.php:23
+msgctxt "Raleway font: on or off"
+msgid "on"
+msgstr ""
+
+#: includes/typefaces.php:24
+msgctxt "Roboto font: on or off"
+msgid "on"
+msgstr ""
+
+#: includes/typefaces.php:25
+msgctxt "Roboto Slab font: on or off"
+msgid "on"
+msgstr ""
+
+#: includes/typefaces.php:26
+msgctxt "Open Sans font: on or off"
+msgid "on"
+msgstr ""
+
+#: includes/typefaces.php:27
+msgctxt "Montserrat font: on or off"
+msgid "on"
+msgstr ""
+
+#: includes/typefaces.php:28
+msgctxt "Droid Serif font: on or off"
+msgid "on"
+msgstr ""
+
+#: includes/typefaces.php:29
+msgctxt "Cabin font: on or off"
+msgid "on"
+msgstr ""
+
+#: includes/typefaces.php:30
+msgctxt "Lato font: on or off"
+msgid "on"
+msgstr ""
+
+#: loop-archive.php:19 loop-blog.php:23 loop-post.php:16
+msgid "by"
+msgstr ""
+
+#: loop-archive.php:20 loop-blog.php:24 loop-post.php:17
+msgid "Leave a Comment"
+msgstr ""
+
+#: loop-archive.php:32 loop-post.php:43
+msgid "Category:"
+msgstr ""
+
+#: loop-archive.php:32 loop-post.php:43
+msgid ", "
+msgstr ""
+
+#: loop-archive.php:32 loop-post.php:43
+msgid "Tags:"
+msgstr ""
+
+#: loop-archive.php:52 loop-page.php:36 loop-post.php:60
+msgid "Sorry, no posts matched your criteria."
+msgstr ""
+
+#: loop-blog.php:33 loop-page.php:15
+msgid "Read More"
+msgstr ""
+
+#: loop-page.php:18 loop-post.php:27
+msgid "Pages:"
+msgstr ""
+
+#: loop-page.php:23 loop-post.php:32
+msgid "Next"
+msgstr ""
+
+#: loop-page.php:24 loop-post.php:33
+msgid "Previous"
+msgstr ""
+
+#: loop-page.php:32 loop-post.php:39
+msgid "(Edit)"
+msgstr ""
+
+#: searchform.php:12
+msgid "Search"
+msgstr ""
+
+#: searchform.php:13
+msgid "Search Here &hellip;"
+msgstr ""
+
+#: searchform.php:14
+msgid "Go"
+msgstr ""
+
+#: template-archive.php:35
+msgid "By Page:"
+msgstr ""
+
+#: template-archive.php:40
+msgid "By Post:"
+msgstr ""
+
+#: template-archive.php:45
+msgid "By Month:"
+msgstr ""
+
+#: template-archive.php:48
+msgid "By Category:"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Natural Lite"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://www.organicthemes.com/theme/natural-theme/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"A versatile business and blogging theme with a natural and earthy design. "
+"Natural Lite is perfect for any business that works closely with the "
+"environment. Promoting a green lifestyle? Selling hand-made jewelry? "
+"Blogging about organic gardening? Running an ecotourism company? This theme "
+"is for you!"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Organic Themes"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.organicthemes.com"
+msgstr ""

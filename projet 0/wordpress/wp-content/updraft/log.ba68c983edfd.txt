@@ -1,0 +1,152 @@
+0000.003 (0) Opened log file at time: Fri, 13 Dec 2019 13:47:55 +0000 on http://192.168.33.60/projet%200/wordpress
+0000.005 (0) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.16.21 WP: 5.3.1 PHP: 7.4.0 (apache2handler, Linux ubuntu-xenial 4.4.0-165-generic #193-Ubuntu SMP Tue Sep 17 17:42:52 UTC 2019 x86_64) MySQL: 5.7.28-0ubuntu0.16.04.2 WPLANG: fr_FR Server: Apache/2.4.18 (Ubuntu) safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 8.9M | 2M) multisite: N openssl: OpenSSL 1.1.1d  10 Sep 2019 mcrypt: N LANG: C ZipArchive::addFile: N
+0000.007 (0) Free space on disk containing Updraft's temporary directory: 173641.3 MB
+0000.030 (0) Tasks: Backup files: 1 (schedule: unset) Backup DB: 1 (schedule: unset)
+0000.037 (0) Semaphore (fd, wp_options) being initialised
+0000.039 (0) Requesting semaphore lock (fd) (apparently not via scheduler)
+0000.042 (0) Set semaphore last lock (fd) time to 2019-12-13 13:47:55
+0000.043 (0) Semaphore lock (fd) complete
+0000.047 (0) Backup run: resumption=0, nonce=ba68c983edfd, file_nonce=ba68c983edfd begun at=1576244875 (0s ago), job type=backup
+0000.048 (0) Scheduling a resumption (1) after 300 seconds (1576245175) in case this run gets aborted
+0000.074 (0) Checking if we have a zip executable available
+0000.076 (0) Zip engine: ZipArchive (a.k.a. php-zip) is not available or is disabled (will use PclZip (much slower) if needed)
+0000.077 (0) Creation of backups of directories: beginning
+0000.087 (0) Beginning creation of dump of plugins (split every: 400 MB)
+0007.210 (0) Total entities for the zip file: 223 directories, 1426 files (0 skipped as non-modified), 23.2 MB
+0007.211 (0) Only one archive required (UpdraftPlus_PclZip) - will attempt to do in single operation (data: 23753.8 KB, split: 409600 KB)
+0007.538 (0) Zip: backup_2019-12-13-1447_Projet0_ba68c983edfd-plugins.zip.tmp: 100 files added (on-disk size: 0 KB)
+0007.869 (0) Zip: backup_2019-12-13-1447_Projet0_ba68c983edfd-plugins.zip.tmp: 200 files added (on-disk size: 0 KB)
+0008.222 (0) Zip: backup_2019-12-13-1447_Projet0_ba68c983edfd-plugins.zip.tmp: 300 files added (on-disk size: 0 KB)
+0008.543 (0) Zip: backup_2019-12-13-1447_Projet0_ba68c983edfd-plugins.zip.tmp: 400 files added (on-disk size: 0 KB)
+0008.900 (0) Zip: backup_2019-12-13-1447_Projet0_ba68c983edfd-plugins.zip.tmp: 500 files added (on-disk size: 0 KB)
+0009.351 (0) Zip: backup_2019-12-13-1447_Projet0_ba68c983edfd-plugins.zip.tmp: 600 files added (on-disk size: 0 KB)
+0009.796 (0) Zip: backup_2019-12-13-1447_Projet0_ba68c983edfd-plugins.zip.tmp: 700 files added (on-disk size: 0 KB)
+0010.217 (0) Zip: backup_2019-12-13-1447_Projet0_ba68c983edfd-plugins.zip.tmp: 800 files added (on-disk size: 0 KB)
+0010.656 (0) Zip: backup_2019-12-13-1447_Projet0_ba68c983edfd-plugins.zip.tmp: 900 files added (on-disk size: 0 KB)
+0011.118 (0) Zip: backup_2019-12-13-1447_Projet0_ba68c983edfd-plugins.zip.tmp: 1000 files added (on-disk size: 0 KB)
+0011.655 (0) Zip: backup_2019-12-13-1447_Projet0_ba68c983edfd-plugins.zip.tmp: 1100 files added (on-disk size: 0 KB)
+0012.082 (0) Zip: backup_2019-12-13-1447_Projet0_ba68c983edfd-plugins.zip.tmp: 1200 files added (on-disk size: 0 KB)
+0012.529 (0) Zip: backup_2019-12-13-1447_Projet0_ba68c983edfd-plugins.zip.tmp: 1300 files added (on-disk size: 0 KB)
+0012.931 (0) Zip: backup_2019-12-13-1447_Projet0_ba68c983edfd-plugins.zip.tmp: 1400 files added (on-disk size: 0 KB)
+0070.347 (0) Created plugins zip (0) - 6944.4 KB in 70.2 s (98.9 KB/s) (sha1: 64d51ffe8c6badbcc4b007b3afe7f23c4482b36a, sha256: e1c1ea6a5a4ff9351483a6c39e7784609dfa58bbb15d784499fdd151454908a0)
+0070.361 (0) Beginning creation of dump of themes (split every: 400 MB)
+0071.161 (0) Total entities for the zip file: 50 directories, 208 files (0 skipped as non-modified), 3.8 MB
+0071.162 (0) Only one archive required (UpdraftPlus_PclZip) - will attempt to do in single operation (data: 3872 KB, split: 409600 KB)
+0071.504 (0) Zip: backup_2019-12-13-1447_Projet0_ba68c983edfd-themes.zip.tmp: 100 files added (on-disk size: 0 KB)
+0071.840 (0) Zip: backup_2019-12-13-1447_Projet0_ba68c983edfd-themes.zip.tmp: 200 files added (on-disk size: 0 KB)
+0075.976 (0) Created themes zip (0) - 2132.1 KB in 5.6 s (380.7 KB/s) (sha1: 219ed91675c20fd0952a80de4af9d4f05404e4f9, sha256: 0eea6cb660bb7c504a4087361a063c3e6960c75bed51d48af77df27cd293dda9)
+0075.992 (0) Exclusion option setting (uploads): backup*,*backups,backwpup*,wp-clone,snapshots
+0075.998 (0) Looking for candidates to backup in: /var/www/html/projet 0/wordpress/wp-content/uploads
+0076.001 (0) finding files: 2019: adding to list (1)
+0076.003 (0) Beginning creation of dump of uploads (split every: 400 MB)
+0076.052 (0) Total entities for the zip file: 2 directories, 3 files (0 skipped as non-modified), 0.3 MB
+0076.055 (0) Only one archive required (UpdraftPlus_PclZip) - will attempt to do in single operation (data: 320.6 KB, split: 409600 KB)
+0076.150 (0) Created uploads zip (0) - 319.4 KB in 0.1 s (2423.9 KB/s) (sha1: 6868dc867f0689786cf856bfa59f8066f95508f8, sha256: 6df396d79a4ca2d59f785159a829de2b2df14383b4580f301823d650caff67e4)
+0076.163 (0) Beginning backup of other directories found in the content directory (index: 0)
+0076.165 (0) Exclusion option setting (others): upgrade,cache,updraft,backup*,*backups,mysql.sql,debug.log
+0076.166 (0) Looking for candidates to backup in: /var/www/html/projet 0/wordpress/wp-content
+0076.168 (0) finding files: index.php: adding to list (1)
+0076.170 (0) finding files: languages: adding to list (2)
+0076.171 (0) finding files: plugins: skipping: this is the plugins directory
+0076.171 (0) finding files: themes: skipping: this is the themes directory
+0076.172 (0) finding files: updraft: skipping: this is the updraft directory
+0076.174 (0) finding files: upgrade: skipping: excluded by options
+0076.175 (0) finding files: uploads: skipping: this is the uploads directory
+0076.288 (0) Total entities for the zip file: 3 directories, 41 files (0 skipped as non-modified), 2.9 MB
+0076.290 (0) Only one archive required (UpdraftPlus_PclZip) - will attempt to do in single operation (data: 2973.2 KB, split: 409600 KB)
+0076.942 (0) Created others zip (0) - 851.4 KB in 0.8 s (1133.1 KB/s) (sha1: c90e08f417de4ef542c5e46504362c7f1c510808, sha256: 9cbf9daedf9eaa02bc9bac67a0fd1b5deb209874100ce7297eb688cf400d7f40)
+0076.959 (0) Saving backup status to database (elements: 8)
+0076.963 (0) Beginning creation of database dump (WordPress DB)
+0076.971 (0) Testing potential mysqldump binary: /usr/bin/mysqldump
+0077.006 (0) Binary mysqldump: error (code: 2)
+0077.032 (0) Table wp_options: Total expected rows (approximate): 173
+0077.042 (0) Table wp_options: Total rows added: 169 in 0.01 seconds
+0077.046 (0) Table wp_options: finishing file (backup_2019-12-13-1447_Projet0_ba68c983edfd-db-table-wp_options.table.gz - 16.9 KB)
+0077.059 (0) Table wp_users: Total expected rows (approximate): 0
+0077.062 (0) Table wp_users: Total rows added: 1 in 0.00 seconds
+0077.066 (0) Table wp_users: finishing file (backup_2019-12-13-1447_Projet0_ba68c983edfd-db-table-wp_users.table.gz - 0.6 KB)
+0077.079 (0) Table wp_usermeta: Total expected rows (approximate): 18
+0077.082 (0) Table wp_usermeta: Total rows added: 21 in 0.00 seconds
+0077.086 (0) Table wp_usermeta: finishing file (backup_2019-12-13-1447_Projet0_ba68c983edfd-db-table-wp_usermeta.table.gz - 1 KB)
+0077.099 (0) Table wp_commentmeta: Total expected rows (approximate): 0
+0077.101 (0) Table wp_commentmeta: Total rows added: 0 in 0.00 seconds
+0077.104 (0) Table wp_commentmeta: finishing file (backup_2019-12-13-1447_Projet0_ba68c983edfd-db-table-wp_commentmeta.table.gz - 0.4 KB)
+0077.117 (0) Table wp_comments: Total expected rows (approximate): 1
+0077.120 (0) Table wp_comments: Total rows added: 1 in 0.00 seconds
+0077.124 (0) Table wp_comments: finishing file (backup_2019-12-13-1447_Projet0_ba68c983edfd-db-table-wp_comments.table.gz - 0.8 KB)
+0077.137 (0) Table wp_links: Total expected rows (approximate): 0
+0077.140 (0) Table wp_links: Total rows added: 0 in 0.00 seconds
+0077.144 (0) Table wp_links: finishing file (backup_2019-12-13-1447_Projet0_ba68c983edfd-db-table-wp_links.table.gz - 0.4 KB)
+0077.157 (0) Table wp_postmeta: Total expected rows (approximate): 37
+0077.160 (0) Table wp_postmeta: Total rows added: 38 in 0.00 seconds
+0077.163 (0) Table wp_postmeta: finishing file (backup_2019-12-13-1447_Projet0_ba68c983edfd-db-table-wp_postmeta.table.gz - 1.1 KB)
+0077.175 (0) Table wp_posts: Total expected rows (approximate): 21
+0077.180 (0) Table wp_posts: Total rows added: 23 in 0.00 seconds
+0077.184 (0) Table wp_posts: finishing file (backup_2019-12-13-1447_Projet0_ba68c983edfd-db-table-wp_posts.table.gz - 4.9 KB)
+0077.197 (0) Table wp_term_relationships: Total expected rows (approximate): 3
+0077.199 (0) Table wp_term_relationships: Total rows added: 4 in 0.00 seconds
+0077.202 (0) Table wp_term_relationships: finishing file (backup_2019-12-13-1447_Projet0_ba68c983edfd-db-table-wp_term_relationships.table.gz - 0.4 KB)
+0077.215 (0) Table wp_term_taxonomy: Total expected rows (approximate): 2
+0077.218 (0) Table wp_term_taxonomy: Total rows added: 1 in 0.00 seconds
+0077.221 (0) Table wp_term_taxonomy: finishing file (backup_2019-12-13-1447_Projet0_ba68c983edfd-db-table-wp_term_taxonomy.table.gz - 0.4 KB)
+0077.235 (0) Table wp_termmeta: Total expected rows (approximate): 0
+0077.237 (0) Table wp_termmeta: Total rows added: 0 in 0.00 seconds
+0077.240 (0) Table wp_termmeta: finishing file (backup_2019-12-13-1447_Projet0_ba68c983edfd-db-table-wp_termmeta.table.gz - 0.4 KB)
+0077.253 (0) Table wp_terms: Total expected rows (approximate): 1
+0077.256 (0) Table wp_terms: Total rows added: 1 in 0.00 seconds
+0077.260 (0) Table wp_terms: finishing file (backup_2019-12-13-1447_Projet0_ba68c983edfd-db-table-wp_terms.table.gz - 0.4 KB)
+0077.273 (0) Table wp_lockdowns: Total expected rows (approximate): 0
+0077.275 (0) Table wp_lockdowns: Total rows added: 0 in 0.00 seconds
+0077.279 (0) Table wp_lockdowns: finishing file (backup_2019-12-13-1447_Projet0_ba68c983edfd-db-table-wp_lockdowns.table.gz - 0.3 KB)
+0077.291 (0) Table wp_login_fails: Total expected rows (approximate): 0
+0077.294 (0) Table wp_login_fails: Total rows added: 0 in 0.00 seconds
+0077.297 (0) Table wp_login_fails: finishing file (backup_2019-12-13-1447_Projet0_ba68c983edfd-db-table-wp_login_fails.table.gz - 0.3 KB)
+0077.311 (0) backup_2019-12-13-1447_Projet0_ba68c983edfd-db-table-wp_options.table.gz (1/14): adding to final database dump
+0077.317 (0) backup_2019-12-13-1447_Projet0_ba68c983edfd-db-table-wp_users.table.gz (2/14): adding to final database dump
+0077.322 (0) backup_2019-12-13-1447_Projet0_ba68c983edfd-db-table-wp_usermeta.table.gz (3/14): adding to final database dump
+0077.326 (0) backup_2019-12-13-1447_Projet0_ba68c983edfd-db-table-wp_commentmeta.table.gz (4/14): adding to final database dump
+0077.330 (0) backup_2019-12-13-1447_Projet0_ba68c983edfd-db-table-wp_comments.table.gz (5/14): adding to final database dump
+0077.333 (0) backup_2019-12-13-1447_Projet0_ba68c983edfd-db-table-wp_links.table.gz (6/14): adding to final database dump
+0077.337 (0) backup_2019-12-13-1447_Projet0_ba68c983edfd-db-table-wp_postmeta.table.gz (7/14): adding to final database dump
+0077.340 (0) backup_2019-12-13-1447_Projet0_ba68c983edfd-db-table-wp_posts.table.gz (8/14): adding to final database dump
+0077.344 (0) backup_2019-12-13-1447_Projet0_ba68c983edfd-db-table-wp_term_relationships.table.gz (9/14): adding to final database dump
+0077.348 (0) backup_2019-12-13-1447_Projet0_ba68c983edfd-db-table-wp_term_taxonomy.table.gz (10/14): adding to final database dump
+0077.351 (0) backup_2019-12-13-1447_Projet0_ba68c983edfd-db-table-wp_termmeta.table.gz (11/14): adding to final database dump
+0077.355 (0) backup_2019-12-13-1447_Projet0_ba68c983edfd-db-table-wp_terms.table.gz (12/14): adding to final database dump
+0077.359 (0) backup_2019-12-13-1447_Projet0_ba68c983edfd-db-table-wp_lockdowns.table.gz (13/14): adding to final database dump
+0077.365 (0) backup_2019-12-13-1447_Projet0_ba68c983edfd-db-table-wp_login_fails.table.gz (14/14): adding to final database dump
+0077.372 (0) backup_2019-12-13-1447_Projet0_ba68c983edfd-db.gz: finished writing out complete database file (0 KB)
+0077.404 (0) Total database tables backed up: 14 (backup_2019-12-13-1447_Projet0_ba68c983edfd-db.gz, size: 25428, sha1: 0753ab10372577b410e1d3fcd900761b287ea6ab, sha256: 7fe111781f5477cfddc16e26fa5b9161f4477b62955c1345d75fe6834ea38cb7)
+0077.421 (0) backup_2019-12-13-1447_Projet0_ba68c983edfd-plugins.zip: plugins: This file has not yet been successfully uploaded: will queue
+0077.425 (0) backup_2019-12-13-1447_Projet0_ba68c983edfd-themes.zip: themes: This file has not yet been successfully uploaded: will queue
+0077.429 (0) backup_2019-12-13-1447_Projet0_ba68c983edfd-uploads.zip: uploads: This file has not yet been successfully uploaded: will queue
+0077.433 (0) backup_2019-12-13-1447_Projet0_ba68c983edfd-others.zip: others: This file has not yet been successfully uploaded: will queue
+0077.437 (0) backup_2019-12-13-1447_Projet0_ba68c983edfd-db.gz: db: This file has not yet been successfully uploaded: will queue
+0077.440 (0) Saving backup history. Total backup size: 10 MB
+0077.447 (0) Requesting upload of the files that have not yet been successfully uploaded (5)
+0077.455 (0) Cloud backup selection (1/1): none with instance (1/1) (last)
+0077.457 (0) No remote despatch: user chose no remote backup service
+0077.458 (0) Recording as successfully uploaded: backup_2019-12-13-1447_Projet0_ba68c983edfd-plugins.zip
+0077.463 (0) Recording as successfully uploaded: backup_2019-12-13-1447_Projet0_ba68c983edfd-themes.zip
+0077.469 (0) Recording as successfully uploaded: backup_2019-12-13-1447_Projet0_ba68c983edfd-uploads.zip
+0077.476 (0) Recording as successfully uploaded: backup_2019-12-13-1447_Projet0_ba68c983edfd-others.zip
+0077.482 (0) Recording as successfully uploaded: backup_2019-12-13-1447_Projet0_ba68c983edfd-db.gz
+0077.490 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+0077.492 (0) Number of backup sets in history: 1; groups (db): 1
+0077.494 (0) Examining (for databases) backup set with group_id=0, nonce=ba68c983edfd, datestamp=1576244875 (Dec 13 2019 13:47:55)
+0077.496 (0) This backup set is the backup set just made, so will not be deleted.
+0077.496 (0) Number of backup sets in history: 1; groups (files): 1
+0077.498 (0) Examining (for files) backup set with nonce=ba68c983edfd, datestamp=1576244875 (Dec 13 2019 13:47:55)
+0077.498 (0) This backup set is the backup set just made, so will not be deleted.
+0077.499 (0) This backup set is the backup set just made, so will not be deleted.
+0077.500 (0) This backup set is the backup set just made, so will not be deleted.
+0077.500 (0) This backup set is the backup set just made, so will not be deleted.
+0077.501 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0077.503 (0) Retain: saving new backup history (sets now: 1) and finishing retain operation
+0077.507 (0) Resume backup (ba68c983edfd, 0): finish run
+0077.511 (0) Decremented the semaphore (fd) by 1
+0077.513 (0) Semaphore (fd) unlocked
+0077.514 (0) There were no errors in the uploads, so the 'resume' event (1) is being unscheduled
+0077.519 (0) The backup apparently succeeded and is now complete
+0077.521 (0) No email will/can be sent - the user has not configured an email address.
+0077.523 (0) La sauvegarde a réussie. Elle est maintenant terminée.

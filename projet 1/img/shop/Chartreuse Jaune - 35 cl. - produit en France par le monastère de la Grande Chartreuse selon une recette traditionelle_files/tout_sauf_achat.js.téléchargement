@@ -1,0 +1,247 @@
+var
+texte_recherche = 'Votre recherche...',
+interval_slider = 5000,
+id_zone_produits_1 = 3,
+id_zone_produits_2 = 4,
+id_zone_produits_3 = 5,
+id_zone_produits_4 = 6,
+id_zone_liens = 7;
+
+var
+menu_accordeon_actif = false,
+produits = null;
+
+$(function() {
+
+    function deplacer_texte_panier() {
+        var texte_panier = $('#basket .basket_info');
+        
+        if(texte_panier.length != 0)
+            texte_panier.insertAfter('#basket h1');
+    }
+    
+    function deplacer_call_to_action() {
+        var call_to_action = $('#extra_call_to_action');
+        
+        if(call_to_action.length != 0)
+            $('#left').after(call_to_action);
+    }
+    
+    function creer_slider_corteges() {
+        var slider_corteges = $('#slider_corteges');
+        
+        if(slider_corteges.length != 0) {
+            slider_corteges.find('.selection_visuel > li:first-child > a').addClass('actif');
+            
+            slider_corteges.children('.slider').eq(0).scrollable({
+                items: '.visuels',
+                circular: true,
+                speed: 500
+            }).navigator({
+                activeClass: 'actif',
+                navi: '.selection_visuel',
+                naviItem: 'a'
+            }).autoscroll(interval_slider);
+        }
+    }
+    
+    function creer_slider_presentation() {
+        var slider_presentation = $('#slider_presentation');
+        
+        if(slider_presentation.length != 0) {
+            slider_presentation.find('.selection_section > li:first-child > a').addClass('actif');
+            
+            slider_presentation.children('.slider').eq(0).scrollable({
+                items: '.sections > ul',
+                keyboard: false,
+                speed: 500
+            }).navigator({
+                activeClass: 'actif',
+                navi: '.selection_section',
+                naviItem: 'a'
+            });
+        }
+    }
+    
+    function gerer_liens() {
+        var zone_liens = $('#tl_0' + id_zone_liens);
+        
+        if(zone_liens.length != 0) {
+            var titre_lien = '';
+            
+            zone_liens.find('.view').each(function() {
+                titre_lien = $(this).attr('alt');
+                if(titre_lien != null && titre_lien.trim() !== '')
+                    $('<p class="titre_lien txtcenter">' + titre_lien + '</p>').appendTo($(this).parent());
+            });
+        }
+    }
+    
+    function renommer_onglets() {
+        if(produits != null) {
+            var onglets = $('#onglets');
+            
+            if(onglets.length != 0) {
+                var zone_titre = null;
+                var titre = '';
+                
+                onglets.empty();
+                
+                produits.children().each(function() {
+                    zone_titre = $(this).children('h2').eq(0);
+                    if(zone_titre.length != 0) {
+                        titre = zone_titre.text();
+                        onglets.append('<li class="medium-inbl large-inbl"><a class="inbl w100" href="#" title="Voir le contenu de l\'onglet : ' + titre + '">' + titre + '</a></li>');
+                        zone_titre.remove();
+                    }
+                });
+            }
+        }
+    }
+    
+    function deplacer_produits() {
+        var zone_produits_1 = $('#tc_0' + id_zone_produits_1);
+        if(zone_produits_1.length != 0) {
+            var contenu_produits_1 = zone_produits_1.html();
+            zone_produits_1.empty();
+            produits = $('<div id="produits" class="clearfix"></div>').appendTo(zone_produits_1);
+            var produits_1 = $('<div id="produits_1"></div>').appendTo(produits);
+            produits_1.append(contenu_produits_1);
+        }
+        
+        var zone_produits_2 = $('#tc_0' + id_zone_produits_2);
+        if(zone_produits_2.length != 0) {
+            var contenu_produits_2 = zone_produits_2.html();
+            zone_produits_2.remove();
+            if(produits != null) {
+                var produits_2 = $('<div id="produits_2"></div>').appendTo(produits);
+                produits_2.append(contenu_produits_2);
+            }
+        }
+        
+        var zone_produits_3 = $('#tc_0' + id_zone_produits_3);
+        if(zone_produits_3.length != 0) {
+            var contenu_produits_3 = zone_produits_3.html();
+            zone_produits_3.remove();
+            if(produits != null) {
+                var produits_3 = $('<div id="produits_3"></div>').appendTo(produits);
+                produits_3.append(contenu_produits_3);
+            }
+        }
+        
+        var zone_produits_4 = $('#tc_0' + id_zone_produits_4);
+        if(zone_produits_4.length != 0) {
+            var contenu_produits_4 = zone_produits_4.html();
+            zone_produits_4.remove();
+            if(produits != null) {
+                var produits_4 = $('<div id="produits_4"></div>').appendTo(produits);
+                produits_4.append(contenu_produits_4);
+            }
+        }
+    }
+    
+    function creer_onglets() {
+        deplacer_produits();
+        renommer_onglets();
+        
+        if($('#onglets').length != 0 && produits != null) {
+            $('#onglets').tabs(produits.children(), {
+                current: 'actif',
+                effect: 'fade'
+            });
+        }
+    }
+    
+    function creer_slider_accueil() {
+        var slider_accueil = $('#slider_accueil');
+        
+        if(slider_accueil.length != 0) {
+            slider_accueil.find('.selection_visuel > li:first-child > a').addClass('actif');
+            
+            slider_accueil.find('.slider').eq(0).scrollable({
+                items: '.visuels',
+                circular: true,
+                speed: 500
+            }).navigator({
+                activeClass: 'actif',
+                navi: '.selection_visuel',
+                naviItem: 'a'
+            }).autoscroll(interval_slider);
+        }
+    }
+    
+    function gerer_texte_recherche() {
+        var recherche = $('#ctx_search');
+        
+        if(recherche.length != 0)
+            recherche.attr('placeholder', texte_recherche);
+    }
+    
+    function gerer_menu() {
+        var top = $('#top');
+        var navig = $('#navig');
+        
+        if(top.length != 0 && navig.length != 0) {
+            $('<a id="ouvrir_menu" class="gestion_menu fa fa-bars txtcenter" href="#navig" title="Ouvrir le menu"><span class="inbl w100 tiny-hidden">Menu</span></a>').appendTo(top);
+            $('<a id="fermer_menu" class="gestion_menu fa fa-times" href="#" title="Fermer le menu"><span class="invisible">Menu</span></a>').prependTo(navig);
+        }
+    }
+    
+    function gerer_menu_accordeon(etat) {
+        var menu = $('#menu');
+        
+        if(menu.length != 0) {
+            var menus_accordeon = menu.find('.smenu:has(*)').siblings();
+            
+            menus_accordeon.toggleClass('accordeon');
+            
+            if(etat)
+                menus_accordeon.bind('click', function(e) {
+                    var menu_actuel = $(this);
+                    menu.find('.menu:not([title="' + menu_actuel.attr('title') + '"])').removeClass('actif');
+                    menu_actuel.toggleClass('actif');
+                    e.preventDefault();
+                });
+            else
+                menus_accordeon.unbind('click');
+            
+            menu_accordeon_actif = !menu_accordeon_actif;
+        }
+    }
+    
+    function gerer_commande_contact() {
+        var commande_contact = $('#comand .help > a');
+        
+        if(commande_contact.length != 0) {
+            commande_contact.attr('href', '/mag/fr/contact.php');
+            commande_contact.text('Contact');
+        }
+    }
+    
+    function redimensionner_fenetre() {
+        var message = window.getComputedStyle(document.body, ':before').getPropertyValue('content');
+        var menu_accordeon = (message.indexOf('menu_accordeon') >= 0) ? true : false;
+        
+        if(menu_accordeon && !menu_accordeon_actif)
+            gerer_menu_accordeon(true);
+        else if(!menu_accordeon && menu_accordeon_actif)
+            gerer_menu_accordeon(false);
+    }
+    
+    function initialiser() {
+        $(window).resize(redimensionner_fenetre).resize();
+        gerer_commande_contact();
+        gerer_menu();
+        gerer_texte_recherche();
+        creer_slider_accueil();
+        creer_onglets();
+        gerer_liens();
+        creer_slider_presentation();
+        creer_slider_corteges();
+        deplacer_call_to_action();
+        deplacer_texte_panier();
+    }
+    
+    initialiser();
+
+});
